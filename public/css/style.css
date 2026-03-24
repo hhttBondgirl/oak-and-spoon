@@ -1,0 +1,543 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  html, body,
+  ul, ol, li,
+  h1, h2, h3, h4, h5, h6, p,
+  form, input, div {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Lato, "Hiragino Kaku Gothic Pro", sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    color: #89949e;
+  }
+  
+  h2, h3, h4, h5, h6 {
+    font-weight: 400;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #4ac0b9;
+  }
+  
+  a:visited {
+    color: #4ac0b9;
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px #ccd7d4;
+    transition: all 0.3s ease;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  
+
+  header 
+  {
+    text-align: center;
+    margin-bottom: 60px;
+    margin:0;
+    padding:0;
+  }
+
+  header h1 {
+    font-size: 40px;
+    color: #4ac0b9;
+    display: inline-block;
+    padding: 20px 0;
+    margin: 80px 0 30px;
+    border-top: 5px solid #42c7c1;
+    border-bottom: 5px solid #42c7c1;
+  }
+
+  .menu-description {
+    font-size: 18px;
+    color: #322f33;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+/* ************ slider ************ */
+
+/* 1. スライダー全体の高さを固定する */
+.main-slider {
+  width: 100%;
+  height: 450px;
+  overflow: hidden; /* はみ出た分を隠す */
+}
+
+/* 2. slickが自動で作る「リストの枠」も同じ高さにする（ここが大事！） */
+.main-slider .slick-list,
+.main-slider .slick-track,
+.main-slider .slick-slide > div {
+  height: 100%;
+}
+
+/* 3. 画像をその高さ（450px）にピッタリ合わせる */
+.main-slider img {
+  width: 100%;
+  height: 450px; /* ここを100%じゃなく直接450pxにするか、親を100%にする */
+  object-fit: cover;
+  object-position: center;
+}
+
+.slider-item {
+  position: relative;
+  width: 100%;
+  height: 450px;
+}
+
+.slider-content {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center; /* 中の文字を中央寄せに */
+  z-index: 10;
+}
+
+.slider-content h2 {
+  margin: 0; /* 余計な隙間をカット */
+  color: #fff;
+  font-size: 5rem; /* もう少し大きくしてもいいかも！ */
+  letter-spacing: 0.05em;
+  font-family: "Forum", serif;
+}
+
+.slider-content p {
+  margin: 0;
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  font-family: "Forum", serif;
+}
+
+/* 画像を暗くするフィルター（画像自体を加工しなくてもCSSでできるよ！） */
+.slider-item img {
+  filter: brightness(60%); 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ************ menu ************ */
+  .menu-wrapper {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    max-width: 1000px;
+    height: auto;
+    margin: 0 auto 60px;
+  }
+
+  .menu-item-image {
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px #ccd7d4;
+    transition: all 0.3s ease;
+  }
+
+  .menu-item-content {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    margin-top: 12px;
+  }
+
+  .menu-item-content h3 {
+    font-size: 24px;
+    color: #4ac0b9;
+    margin-bottom: 12px;
+  }
+
+  .menu-item-content p {
+    font-size: 18px;
+    color: #322f33;
+    margin-bottom: 12px;
+  }
+
+  
+  .price {
+    margin: 15px 0;
+    font-size: 18px;
+    color: #322f33;
+  }
+  
+  
+  .menu-item {
+    display: inline-block;
+    width: 100%;
+    padding: 20px;
+    margin-top: 40px;
+  }
+  
+
+  .icon-spiciness {
+    width: 20px;
+  }
+  
+
+  .quantity-input {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* ボックスと「個」の間隔 */
+}
+
+.quantity-input input {
+    width: 60px;
+    padding: 5px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+}
+
+  input[type="submit"] {
+    display: inline-block;
+    width: 160px;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 20px;
+    border-radius: 30px;
+    border-style: none;
+    color: #fff;
+    background-color: #42c7c1;
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+  }
+  
+  .order-wrapper {
+    text-align: center;
+    background-color: #f8f8f8;
+    line-height: 2;
+    letter-spacing: 0.1em;
+    width: 500px;
+    margin: 60px auto;
+    padding: 20px 0 30px;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px #ccd7d4;
+  }
+  
+  .order-wrapper h2 {
+    font-size: 32px;
+    margin: 30px 0;
+    color: #322f33;
+  }
+  
+  .order-wrapper p {
+    display: inline-block;
+    font-size: 22px;
+  }
+  
+  .order-wrapper h3 {
+    border-top: 1px solid #dae1e7;
+    margin-top: 30px;
+    padding-top: 30px;
+    font-size: 28px;
+    color: #42c7c1;
+  }
+  
+  .order-wrapper h4 {
+    margin-top: 40px;
+    font-size: 25px;
+    color: #322f33;
+  }
+  
+  .order-amount {
+    width: 40%;
+    text-align: left;
+  }
+  
+  .order-price {
+    width: 35%;
+    text-align: right;
+  }
+  
+  /* ************ review ************ */
+  .review-wrapper {
+    text-align: center;
+    width: 400px;
+    margin: 60px auto;
+  }
+  
+  .review-menu-item {
+    border-radius: 5px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    border: 1px solid #dadada;
+  }
+  
+  .review-menu-item img {
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .review-menu-item .menu-item-type {
+    color: #c2c8ce;
+    font-size: 16px;
+  }
+  
+  .review-menu-item .price {
+    font-size: 20px;
+  }
+  
+  .review-list-wrapper {
+    margin: 50px 0;
+    text-align: left;
+  }
+  
+  .review-list-title {
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(104, 107, 106, 0.15);
+  }
+  
+  .review-list-title h4 {
+    font-size: 22px;
+  }
+  
+  .review-list-item {
+    margin-bottom: 30px;
+    background: #e5eef6;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .review-list-title img, .review-list-title h4, .review-list-item img {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .icon-review {
+    width: 40px;
+    margin-right: 10px;
+    margin-top: -12px;
+  }
+  
+.review-user .icon-user {
+  width: 24px;
+  height: 24px;
+}
+
+.review-user img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+  .review-user {
+    width: 60px;
+    display: inline-block;
+    border-right: 1px solid #c1ced7;
+    padding-right: 8px;
+    text-align: center;
+  }
+  
+  .review-text {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 16px;
+    margin-left: 10px;
+    font-size: 15px;
+  }
+
+  /* ************ order ************ */
+  .order-button {
+    display: block;
+    margin: 0 auto;
+    width: 250px;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 20px;
+    border-radius: 30px;
+    border-style: none;
+    background-color: #42c7c1;
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .order-button:hover {
+    background-color: #36b3ae;
+  }
+
+  .order-button:active {
+    background-color: #36b3ae;
+  }
+
+  .order-button:focus {
+    outline: none;
+  }
+
+  .confirm-container {
+    width: 500px;
+    height: 100%;
+    margin: 60px auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px #ccd7d4;
+    text-align: center;
+  }
+
+  .confirm-container h2 {
+    font-size: 32px;
+    margin: 30px 0;
+    color: #322f33;
+  }
+
+  .confirm-container ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  .confirm-container li {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #322f33;
+  }
+  
+  
+
+  .confirm-container p {
+    font-size: 22px;
+    color: #42c7c1;
+    margin: 30px 0 30px 0;
+    font-weight: 600;
+    border-top: 1px solid #DAE1E7;
+    padding-top: 30px;
+  }
+
+  .confirm-container a {
+    display: block;
+    width: 160px;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 20px;
+    border-radius: 30px;
+    border-style: none;
+    background-color: #42c7c1;
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+  }
+  
+  .confirm-container a:hover {
+    background-color: #36b3ae;
+  }
+  
+  .back-link {
+    width: 180px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: 50px;
+    margin-top: 30px;
+    font-size: 16px;
+    color: #4ac0b9;
+    border-radius: 30px;
+    font-weight: 600;
+
+  }
+
+  .back-link a {
+    
+  }
+
+  .back-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .back-link a:active {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .back-link a:focus {
+    outline: none;
+  }
+
+
+  footer {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    font-size: 14px;
+  }
+
+  .app-flash {
+    max-width: 1000px;
+    margin: 0 auto 24px;
+    padding: 12px 16px;
+    text-align: center;
+    color: #2d6a65;
+    background: #e8f7f6;
+    border: 1px solid #4ac0b9;
+    border-radius: 5px;
+  }
+
+  .form-errors {
+    max-width: 1000px;
+    margin: 0 auto 24px;
+    padding: 12px 16px 12px 28px;
+    list-style: disc;
+    color: #a94442;
+    background: #fdf3f2;
+    border: 1px solid #e4b9b9;
+    border-radius: 5px;
+  }
+
+  /* タブレット（画面幅が 1024px 以下のとき）：2カラム */
+@media (max-width: 1024px) {
+  .menu-wrapper {
+    grid-template-columns: 1fr 1fr;
+    padding: 0 20px; 
+  }
+}
+
+/* スマホ（画面幅が 600px 以下のとき）：1カラム */
+@media (max-width: 600px) {
+  .menu-wrapper {
+    grid-template-columns: 1fr;
+    gap: 20px; 
+  }
+
+  .slider-content h2 {
+    font-size: 3.5rem;
+    letter-spacing: 0.05em;
+    font-family: "Forum", serif;
+  }
+  
+  .slider-content p {
+    font-size: 0.8rem;
+  }
+}
