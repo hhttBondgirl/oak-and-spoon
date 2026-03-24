@@ -13,19 +13,19 @@
 
 ### トップページ
 
-![トップページ](images/top.png)
+![トップページ](public/images/top.png)
 
 ### メニュー詳細ページ（アールグレイ）
 
-![アールグレイ詳細ページ](images/show_tea.png)
+![アールグレイ詳細ページ](public/images/show_tea.png)
 
 ### 注文確認画面
 
-![注文確認](images/confirm.png)
+![注文確認](public/images/confirm.png)
 
 ### thankyou画面
 
-![thankyouメッセージ](images/thankyou.png)
+![thankyouメッセージ](public/images/thankyou.png)
 
 ---
 
