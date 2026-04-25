@@ -3,21 +3,21 @@
 @section('slider')
     <div class="main-slider">
         <div class="slider-item">
-            <img src="{{ asset('images/slider1.jpg') }}" alt="">
+            <img src="{{ asset('images/slider1.jpg') }}" loading="lazy" alt="Oak & Spoon">
             <div class="slider-content">
                 <h2>Oak & Spoon</h2>
                 <p>森に溶け込む、小さなカフェ</p>
             </div>
         </div>
         <div class="slider-item">
-            <img src="{{ asset('images/slider2.jpg') }}" alt="">
+            <img src="{{ asset('images/slider2.jpg') }}" loading="lazy" alt="Oak & Spoon">
             <div class="slider-content">
                 <h2>Oak & Spoon</h2>
                 <p>森に溶け込む、小さなカフェ</p>
             </div>
         </div>
         <div class="slider-item">
-            <img src="{{ asset('images/slider3.jpg') }}" alt="">
+            <img src="{{ asset('images/slider3.jpg') }}" loading="lazy" alt="Oak & Spoon">
             <div class="slider-content">
                 <h2>Oak & Spoon</h2>
                 <p>森に溶け込む、小さなカフェ</p>
@@ -46,7 +46,7 @@
                 @foreach($menus as $menu)
                     <div class="menu-item">
                         <div class="menu-item-image">
-                            <img src="{{ asset('images/' . $menu->image) }}" alt="{{ $menu->name }}">
+                            <img src="{{ asset('images/' . $menu->image) }}" loading="lazy" alt="{{ $menu->name }}">
                         </div>
                         <div class="menu-item-content">
                             <h3><a href="{{ route('orders.show', $menu) }}">{{ $menu->name }}</a></h3>

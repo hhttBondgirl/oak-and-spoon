@@ -4,7 +4,7 @@
     <div class="review-wrapper">
         <div class="review-menu-item">
             {{-- 画像の表示 --}}
-            <img src="{{ asset('images/' . $menu->image) }}" class="menu-item-image">
+            <img src="{{ asset('images/' . $menu->image) }}" class="menu-item-image" loading="lazy">
             <h3 class="menu-item-name">{{ $menu->name }}</h3>
 
             @if($menu->type === 'drink')
